@@ -1,0 +1,153 @@
+/* 1. VARIABLES - The colors used throughout the site */
+:root {
+    --primary-color: #0f172a; /* Professional Dark Blue */
+    --accent-color: #3b82f6;  /* Bright Blue */
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --bg-gradient: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+}
+
+/* 2. DARK MODE OVERRIDES - This kicks in when JavaScript toggles the class */
+body.dark-theme {
+    --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    --accent-color: #db0007; /* Arsenal Red Accent */
+    color: white;
+}
+
+body.dark-theme .profile-card {
+    background: #262626;
+    border: 1px solid #333;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme h2 { color: #ffffff; }
+body.dark-theme .description { color: #94a3b8; }
+body.dark-theme .service-tag { 
+    background: #333; 
+    color: #f8fafc; 
+    border: 1px solid #444; 
+}
+
+/* 3. BASE STYLES */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack button and card */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    transition: background 0.5s ease;
+}
+
+/* 4. THE CARD DESIGN */
+.profile-card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-8px);
+}
+
+/* 5. IMAGE & TEXT */
+.image-container {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    padding: 5px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h2 {
+    margin: 0.5rem 0;
+    color: var(--text-dark);
+}
+
+.tagline {
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+}
+
+.description {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+/* 6. SERVICE TAGS & ANIMATION */
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.service-tag {
+    background: #f1f5f9;
+    color: var(--text-dark);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+    animation: popIn 0.5s ease backwards;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 7. BUTTONS */
+.theme-btn {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    filter: brightness(1.2);
+}

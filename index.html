@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional ICT Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <button id="theme-toggle" class="theme-btn">Dark Mode</button>
+
+    <div class="profile-card">
+        <div class="image-container">
+            <img src="profile.png" alt="ICT Specialist" >
+        </div>
+        
+        <h2>Peter</h2>
+        <div class="tagline">ICT Specialist & Developer</div>
+        
+        <p class="description">
+            Versatile ICT specialist dedicated to bridging the gap between complex technical systems and practical business needs. From custom web development to system maintenance, I deliver reliable solutions tailored to your goals.
+        </p>
+
+        <ul class="services-list">
+            <li class="service-tag">Web Development</li>
+            <li class="service-tag">Linux System Admin</li>
+            <li class="service-tag">Network Config</li>
+            <li class="service-tag">IT Support</li>
+        </ul>
+
+        <div class="footer-links">
+            <a href="mailto:peterbongymam@gmail.com" class="btn">Contact Me</a>
+            <a href="#" class="btn">View Portfolio</a>
+            <div class="social-icons">
+                <span>GitHub</span> • <span>LinkedIn</span> • <span>Email</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const btn=document.getElementById("theme-toggle");
+        btn.addEventListener("click",function(){
+            document.body.classList.toggle("dark-theme");
+            // Update button text
+            if(document.body.classList.contains("dark-theme")) {
+                btn.textContent = "Light Mode";
+            } else {
+                btn.textContent = "Dark Mode";
+            }
+        })
+    </script>
+
+</body>
+</html>
